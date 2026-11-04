@@ -8,7 +8,7 @@
 - [x] Teléfono publicado (es el mismo WhatsApp)
 - [ ] Confirmar que "atención directa y personalizada" es cierto en su práctica (respuesta de la pregunta sobre servicios independientes)
 - [ ] Confirmar las credenciales publicadas: Tarjeta Profesional vigente, especialización en curso, más de 15 años
-- [ ] Decidir si se retira la frase «¡No espere a que lo inspeccionen y no tenga nada!» de la tarjeta del manual de calidad (transmite presión; ya se quitó en Contacto)
+- [x] Frase de cierre de la tarjeta de control de calidad: reemplazada por «Fortalezca la calidad, la confianza y el cumplimiento de su ejercicio profesional independiente.» (texto de Julieta)
 - [ ] Revisar las fechas de `js/fechas.js` antes de ofrecerlas a clientes (algunas fuentes difieren en 1 día)
 - [ ] Decidir el año del pie de página (hoy fijo en «© 2011»; alternativa: «2011–año actual»)
 - [ ] Política de tratamiento de datos personales (Ley 1581 de 2012): el formulario recoge nombre y empresa

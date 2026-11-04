@@ -133,7 +133,8 @@ a { color: var(--vino); }
 .servicio.destacado { grid-column: 1 / -1; }
 @media (min-width: 700px) { .servicio.destacado ul { columns: 2; column-gap: 2.4rem; } .servicio.destacado li { break-inside: avoid; } }
 .cinta { position: absolute; top: -12px; right: 16px; background: var(--vino); color: #fff; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; }
-.alerta { margin: 1rem 0 0; font-weight: 700; font-size: .95rem; }
+/* Frase de cierre de la tarjeta de control de calidad: cursiva y línea separadora arriba */
+.alerta { margin: 1.2rem 0 0; padding-top: 1rem; border-top: 1px solid rgba(61, 11, 32, .25); font-weight: 700; font-style: italic; font-size: .95rem; }
 
 /* ---------- PROCESO ---------- */
 .pasos { list-style: none; counter-reset: paso; padding: 0; display: grid; gap: 1.2rem; }
