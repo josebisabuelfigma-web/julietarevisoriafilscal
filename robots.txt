@@ -1,0 +1,6 @@
+# Permite que Google y otros buscadores lean todo el sitio.
+# TODO: cambiar el dominio de ejemplo por el real.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.jlbauditoria.com/sitemap.xml

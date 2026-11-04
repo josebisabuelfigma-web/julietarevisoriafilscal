@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  JLB Auditoría y Consultoría · Sitio web estático (HTML + CSS + JS)
+  --------------------------------------------------------------------------
+  CÓMO EDITAR (guía rápida):
+   - Textos de la página ............ este archivo (index.html)
+   - WhatsApp, correo, botón ........ js/config.js
+   - Fechas importantes ............. js/fechas.js
+   - Colores y tipografías .......... css/styles.css (bloque ":root" al inicio)
+   - Foto de Julieta ................ img/julieta.jpg / img/julieta.webp
+  Busca la palabra "TODO" para ver lo que falta personalizar.
+  Más instrucciones (dominio, Google) en LEEME.md
+  ==========================================================================
+-->
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===================== SEO (para aparecer en Google) ===================== -->
+  <!-- Título que ve Google (idealmente 50-60 caracteres) -->
+  <title>Revisoría fiscal y auditoría externa en Colombia | JLB Auditoría</title>
+  <!-- Descripción que aparece bajo el título en Google (150-160 caracteres) -->
+  <meta name="description" content="Revisoría fiscal, auditoría externa y financiera en Colombia. Auditoría basada en riesgos, independencia y ética. Agende su asesoría con JLB Auditoría y Consultoría.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="JLB Auditoría y Consultoría">
+  <meta name="theme-color" content="#4a0e26">
+
+  <!-- TODO: cuando compre el dominio, reemplace "https://www.jlbauditoria.com" (EJEMPLO)
+       por el real aquí, en las etiquetas og:, en el JSON-LD de abajo, en sitemap.xml y robots.txt -->
+  <link rel="canonical" href="https://www.jlbauditoria.com/">
+
+  <!-- Vista previa al compartir en WhatsApp, Facebook, LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="JLB Auditoría y Consultoría">
+  <meta property="og:title" content="Revisoría fiscal y auditoría externa en Colombia | JLB">
+  <meta property="og:description" content="El revisor fiscal no solo señala: previene, evalúa y aporta valor. Agende su asesoría.">
+  <meta property="og:url" content="https://www.jlbauditoria.com/">
+  <meta property="og:image" content="https://www.jlbauditoria.com/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Tipografías (Google Fonts). Títulos: Playfair Display · Texto: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados: ayudan a Google a entender el negocio.
+       TODO: al tener teléfono/ciudad/redes, se pueden agregar "telephone", "address" y "sameAs". -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "JLB Auditoría y Consultoría",
+    "description": "Revisoría fiscal, auditoría externa y financiera, y manual de control de calidad para contadores independientes en Colombia.",
+    "url": "https://www.jlbauditoria.com/",
+    "image": "https://www.jlbauditoria.com/img/og-image.jpg",
+    "email": "revisorafiscaljlb@gmail.com",
+    "areaServed": { "@type": "Country", "name": "Colombia" },
+    "knowsLanguage": "es",
+    "serviceType": ["Revisoría fiscal", "Auditoría externa", "Auditoría financiera", "Manual de control de calidad para contadores"]
+  }
+  </script>
+  <!-- Preguntas frecuentes (deben coincidir con la sección #preguntas) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Qué hace un revisor fiscal?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Supervisa de forma independiente que la empresa cumpla la ley y sus estatutos, evalúa el control interno, da fe pública de la información financiera y alerta a la administración, a los socios y a las autoridades sobre riesgos e irregularidades." } },
+      { "@type": "Question", "name": "¿Qué empresas están obligadas a tener revisor fiscal en Colombia?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Las sociedades por acciones, las sucursales de sociedades extranjeras y las demás sociedades comerciales cuyos activos brutos a 31 de diciembre del año anterior sean iguales o superiores a 5.000 salarios mínimos, o cuyos ingresos brutos sean iguales o superiores a 3.000 salarios mínimos (Ley 43 de 1990, art. 13). Cada caso debe verificarse." } },
+      { "@type": "Question", "name": "¿Cuál es la diferencia entre revisoría fiscal y auditoría externa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La revisoría fiscal es una función permanente exigida por la ley a ciertas empresas e incluye control de legalidad y fe pública. La auditoría externa es un encargo independiente, contratado de forma voluntaria o por requerimiento, que evalúa la información financiera y emite una opinión." } },
+      { "@type": "Question", "name": "¿Qué es el manual de control de calidad para contadores independientes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Es el documento que describe las políticas y procedimientos de calidad de la práctica profesional del contador, alineado con la NICC 1 y los estándares internacionales, y requerido en las inspecciones de la Junta Central de Contadores." } },
+      { "@type": "Question", "name": "¿Qué pasa si no presento una declaración a tiempo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Se genera sanción por extemporaneidad. La sanción mínima en materia tributaria es de 10 UVT; en 2026 equivale a $523.740 (UVT de $52.374)." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ============================ ENCABEZADO ============================ -->
+  <header class="encabezado">
+    <div class="contenedor barra">
+      <!-- Logo JLB (hecho con texto; para usar un archivo del logo, reemplace este bloque por <img src="img/logo.svg" alt="JLB">) -->
+      <a class="logo" href="#inicio" aria-label="JLB Auditoría y Revisoría Fiscal - Inicio">
+        <span class="logo-jlb">JLB</span>
+        <span class="logo-sub">Auditoría y Revisoría Fiscal</span>
+      </a>
+
+      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#fechas">Fechas importantes</a>
+        <a href="#nosotros">Sobre mí</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+        <!-- Botón WhatsApp: el número se cambia en js/config.js -->
+        <a class="btn btn-dorado btn-menu-cta" data-wa data-boton href="#contacto">Agende su asesoría</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============================== INICIO ============================== -->
+    <section class="hero" id="inicio">
+      <div class="contenedor hero-grid">
+        <div class="hero-texto">
+          <p class="sobretitulo">Auditoría y revisoría fiscal en Colombia</p>
+          <h1>El revisor fiscal no solo señala: <span>previene, evalúa y aporta valor.</span></h1>
+          <p class="hero-sub">El control interno es una herramienta para proteger y fortalecer su empresa. Acompaño a su administración con una auditoría basada en riesgos, independiente y con fundamento profesional.</p>
+          <div class="hero-botones">
+            <a class="btn btn-vino" data-wa data-boton href="#contacto">Agende su asesoría</a>
+            <a class="btn btn-borde" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+
+        <figure class="hero-foto">
+          <picture>
+            <source srcset="img/julieta.webp" type="image/webp">
+            <!-- TODO: cambiar el alt por el nombre completo de Julieta -->
+            <img src="img/julieta.jpg" width="508" height="705" alt="Julieta, revisora fiscal y auditora independiente, sonriendo con saco color vino" fetchpriority="high">
+          </picture>
+        </figure>
+      </div>
+
+      <!-- Valores (de sus piezas gráficas) -->
+      <ul class="contenedor valores" aria-label="Principios de trabajo">
+        <li>Auditoría basada en riesgos</li>
+        <li>Independencia</li>
+        <li>Ética</li>
+        <li>Confianza</li>
+      </ul>
+    </section>
+
+    <!-- ============================== ENFOQUE ============================== -->
+    <section class="seccion" id="enfoque">
+      <div class="contenedor">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Mi enfoque</p>
+          <h2>Una observación de auditoría no es una crítica personal</h2>
+          <p>Es una alerta profesional para que la administración pueda actuar oportunamente.</p>
+        </header>
+
+        <div class="tarjetas cuatro">
+          <article class="tarjeta">
+            <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <h3>Evalúa riesgos</h3>
+            <p>Identifica situaciones que pueden afectar los objetivos y recursos de la empresa.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 7-7M5 4h9M5 9h2M5 14h2M5 19h14"/></svg></span>
+            <h3>Examina controles</h3>
+            <p>Verifica si los controles están diseñados y funcionan adecuadamente.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2v.1h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span>
+            <h3>Comunica oportunidades de mejora</h3>
+            <p>Informa hallazgos y formula recomendaciones con fundamento profesional.</p>
+          </article>
+          <article class="tarjeta">
+            <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM8.5 12l2.5 2.5L16 9.5"/></svg></span>
+            <h3>Promueve la transparencia</h3>
+            <p>Contribuye a la confiabilidad de la información y al cumplimiento normativo.</p>
+          </article>
+        </div>
+
+        <p class="nota-responsabilidad">La administración es responsable de diseñar, implementar y mantener el sistema de control interno; el revisor fiscal lo evalúa dentro del alcance de sus funciones y comunica los asuntos relevantes.</p>
+      </div>
+    </section>
+
+    <!-- ============================= SERVICIOS ============================= -->
+    <section class="seccion seccion-oscura" id="servicios">
+      <div class="contenedor">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Servicios profesionales</p>
+          <h2>Auditoría externa y revisoría fiscal</h2>
+          <p>Transparencia, confianza y cumplimiento para el crecimiento de su empresa.</p>
+        </header>
+
+        <div class="tarjetas servicios">
+          <article class="servicio">
+            <h3>Revisoría fiscal</h3>
+            <p>Supervisión independiente para garantizar el cumplimiento legal, la transparencia y la protección de los intereses de su empresa.</p>
+            <ul>
+              <li>Control de legalidad y de estatutos</li>
+              <li>Evaluación del control interno</li>
+              <li>Dictamen de estados financieros</li>
+              <li>Alertas oportunas a la administración</li>
+            </ul>
+          </article>
+
+          <article class="servicio">
+            <h3>Auditoría externa</h3>
+            <p>Evaluación objetiva e independiente de la información financiera para emitir opiniones confiables y fortalecer la toma de decisiones.</p>
+            <ul>
+              <li>Auditoría basada en riesgos</li>
+              <li>Informe con opinión independiente</li>
+              <li>Recomendaciones para la gerencia</li>
+              <li>Informes claros para decidir</li>
+            </ul>
+          </article>
+
+          <article class="servicio">
+            <h3>Auditoría financiera</h3>
+            <p>Revisión de sus estados financieros para dar confiabilidad a la información que usan socios, bancos y autoridades.</p>
+            <ul>
+              <li>Revisión de cifras y soportes</li>
+              <li>Verificación de políticas contables</li>
+              <li>Detección temprana de errores</li>
+              <li>Mayor confianza ante terceros</li>
+            </ul>
+          </article>
+
+          <article class="servicio destacado">
+            <span class="cinta">Para contadores</span>
+            <h3>Manual de control de calidad</h3>
+            <p>Asesoría y elaboración del manual para contadores independientes, requerido para la inspección de la Junta Central de Contadores.</p>
+            <ul>
+              <li>Cumplimiento normativo alineado con la NICC 1</li>
+              <li>Calidad y confianza en su práctica profesional</li>
+              <li>Mejora continua de procesos</li>
+            </ul>
+            <p class="alerta">¡No espere a que lo inspeccionen y no tenga nada!</p>
+          </article>
+        </div>
+
+        <p class="centro"><a class="btn btn-dorado" data-wa data-boton href="#contacto">Agende su asesoría</a></p>
+      </div>
+    </section>
+
+    <!-- ========================== COMO TRABAJAMOS ========================== -->
+    <section class="seccion" id="proceso">
+      <div class="contenedor">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Cómo trabajamos</p>
+          <h2>Un proceso claro, de la primera conversación al informe</h2>
+        </header>
+        <!-- TODO: ajustar estos pasos a la metodología real de Julieta -->
+        <ol class="pasos">
+          <li><strong>Asesoría inicial</strong><span>Conversamos sobre su empresa, su situación actual y lo que necesita.</span></li>
+          <li><strong>Plan basado en riesgos</strong><span>Definimos el alcance y priorizamos lo que más puede afectar sus objetivos.</span></li>
+          <li><strong>Ejecución independiente</strong><span>Revisión de controles, cifras y cumplimiento con criterio profesional.</span></li>
+          <li><strong>Informe y seguimiento</strong><span>Hallazgos y recomendaciones claras, para que la administración actúe a tiempo.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================= FECHAS IMPORTANTES ========================= -->
+    <section class="seccion seccion-marfil" id="fechas">
+      <div class="contenedor">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Calendario Colombia</p>
+          <h2>Fechas importantes a tener en cuenta</h2>
+          <p>Las obligaciones que más se olvidan, mes a mes. No declarar a tiempo cuesta dinero.</p>
+        </header>
+
+        <!-- Sanción mínima (de su pieza gráfica "Valor de la sanción mínima"). Valor 2026: UVT $52.374 x 10 -->
+        <aside class="sancion">
+          <div>
+            <p class="sancion-tit">Sanción mínima por no declarar a tiempo · 2026</p>
+            <p class="sancion-valor">10 UVT = <strong>$523.740</strong></p>
+            <p class="sancion-peq">UVT 2026: $52.374 (Resolución DIAN 000238 de 2025). Cuando la sanción calculada resulte inferior a 10 UVT, se aplica la sanción mínima.</p>
+          </div>
+          <ul class="sancion-art">
+            <li><strong>Art. 639 E.T.</strong> Sanción mínima: 10 UVT.</li>
+            <li><strong>Art. 641 E.T.</strong> Sanción por extemporaneidad.</li>
+            <li><strong>Art. 642 E.T.</strong> Declaración presentada después de emplazamiento.</li>
+          </ul>
+        </aside>
+
+        <!-- Controles: año y tipo de obligación -->
+        <div class="controles">
+          <div class="grupo" role="group" aria-label="Año">
+            <button type="button" class="chip" data-anio-btn="2026" aria-pressed="true">2026</button>
+            <button type="button" class="chip" data-anio-btn="2027" aria-pressed="false">2027 (por confirmar)</button>
+          </div>
+          <div class="grupo" role="group" aria-label="Tipo de obligación">
+            <button type="button" class="chip" data-filtro="todas" aria-pressed="true">Todas</button>
+            <button type="button" class="chip" data-filtro="dian" aria-pressed="false">DIAN</button>
+            <button type="button" class="chip" data-filtro="mercantil" aria-pressed="false">Cámara de Comercio / sociedades</button>
+            <button type="button" class="chip" data-filtro="super" aria-pressed="false">Supersociedades</button>
+          </div>
+        </div>
+
+        <!-- Las tarjetas por mes las dibuja js/main.js con los datos de js/fechas.js -->
+        <div class="meses" id="fechas-lista">
+          <noscript><p>Active JavaScript para ver el calendario, o consulte el calendario oficial en dian.gov.co.</p></noscript>
+        </div>
+
+        <div class="mensuales">
+          <h3>Todos los meses</h3>
+          <ul id="fechas-mensuales"></ul>
+        </div>
+
+        <p class="aviso" id="fechas-aviso"></p>
+        <p class="centro"><a class="btn btn-vino" data-wa data-wa-msg="Hola Julieta, quiero revisar las fechas y obligaciones de mi empresa." data-boton href="#contacto">Agende su asesoría</a></p>
+      </div>
+    </section>
+
+    <!-- ============================== SOBRE MÍ ============================== -->
+    <section class="seccion" id="nosotros">
+      <div class="contenedor dos-col">
+        <div>
+          <p class="sobretitulo">Sobre mí</p>
+          <h2>Auditora y revisora fiscal, profesional independiente</h2>
+          <!-- TODO: reemplazar por la biografía real de Julieta: nombre completo, formación,
+               tarjeta profesional, años de experiencia, sectores donde ha trabajado. -->
+          <p>Soy Julieta, profesional independiente en auditoría y revisoría fiscal. Mi trabajo es ayudar a que su empresa tome decisiones con información confiable y cumpla sus obligaciones con tranquilidad.</p>
+          <p class="compromiso">«Mi compromiso es con la transparencia, el cumplimiento y su tranquilidad.»</p>
+          <ul class="atributos">
+            <li><strong>Enfocada</strong> en la excelencia y en los resultados.</li>
+            <li><strong>Comprometida</strong> con la ética, la transparencia y la confianza.</li>
+            <li><strong>Innovadora</strong> en soluciones que generan valor real.</li>
+          </ul>
+        </div>
+        <!-- TODO: cuando haya una foto de oficina/equipo, se puede agregar aquí -->
+        <aside class="cita">
+          <p>«Tu tranquilidad financiera, nuestra prioridad.»</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========================= PREGUNTAS FRECUENTES ========================= -->
+    <section class="seccion seccion-marfil" id="preguntas">
+      <div class="contenedor angosto">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Preguntas frecuentes</p>
+          <h2>Lo que más nos preguntan</h2>
+        </header>
+
+        <!-- Si cambia una respuesta, cámbiela también en el JSON-LD (FAQPage) del <head> -->
+        <details>
+          <summary>¿Qué hace un revisor fiscal?</summary>
+          <p>Supervisa de forma independiente que la empresa cumpla la ley y sus estatutos, evalúa el control interno, da fe pública de la información financiera y alerta a la administración, a los socios y a las autoridades sobre riesgos e irregularidades.</p>
+        </details>
+        <details>
+          <summary>¿Qué empresas están obligadas a tener revisor fiscal en Colombia?</summary>
+          <p>Las sociedades por acciones, las sucursales de sociedades extranjeras y las demás sociedades comerciales cuyos activos brutos a 31 de diciembre del año anterior sean iguales o superiores a 5.000 salarios mínimos, o cuyos ingresos brutos sean iguales o superiores a 3.000 salarios mínimos (Ley 43 de 1990, art. 13). Cada caso debe verificarse: agende su asesoría y lo revisamos.</p>
+        </details>
+        <details>
+          <summary>¿Cuál es la diferencia entre revisoría fiscal y auditoría externa?</summary>
+          <p>La revisoría fiscal es una función permanente exigida por la ley a ciertas empresas e incluye control de legalidad y fe pública. La auditoría externa es un encargo independiente, contratado de forma voluntaria o por requerimiento, que evalúa la información financiera y emite una opinión.</p>
+        </details>
+        <details>
+          <summary>¿Qué es el manual de control de calidad para contadores independientes?</summary>
+          <p>Es el documento que describe las políticas y procedimientos de calidad de la práctica profesional del contador, alineado con la NICC 1 y los estándares internacionales, y requerido en las inspecciones de la Junta Central de Contadores.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si no presento una declaración a tiempo?</summary>
+          <p>Se genera sanción por extemporaneidad. La sanción mínima en materia tributaria es de 10 UVT; en 2026 equivale a $523.740 (UVT de $52.374).</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACTO ============================== -->
+    <section class="seccion seccion-oscura" id="contacto">
+      <div class="contenedor dos-col">
+        <div>
+          <p class="sobretitulo">Primer paso</p>
+          <h2>Agende su asesoría</h2>
+          <p>Cuéntenos de su empresa y le respondemos por WhatsApp. No espere a que le inspeccionen para descubrir lo que le falta.</p>
+          <a class="btn btn-dorado btn-grande" data-wa data-boton href="#contacto">Agende su asesoría</a>
+          <ul class="datos">
+            <li><span>Correo</span> <a data-email href="#"></a></li>
+            <li><span>Ubicación</span> <b data-ubicacion></b></li>
+            <li><span>Atención</span> <b>Profesional independiente</b></li>
+          </ul>
+
+          <!-- Redes sociales (sección Contacto). Los enlaces se cambian en js/config.js (bloque "redes").
+               Cada <a data-red="..."> recibe su enlace automáticamente desde js/main.js.
+               Cada icono es un dibujo SVG (se ve nítido en cualquier tamaño y toma el color del texto). -->
+          <ul class="redes" aria-label="Redes sociales">
+            <li><a data-red="facebook" href="#" aria-label="Facebook de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8V6.500c0-.7.200-1.100 1.200-1.100H17V2.200C16.600 2.100 15.600 2 14.500 2 12 2 10.300 3.500 10.300 6.200V8H7.500v3.500h2.800V22H14V11.500h2.700L17.200 8H14z"/></svg></a></li>
+            <li><a data-red="instagram" href="#" aria-label="Instagram de JLB"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.200"/><circle cx="17.300" cy="6.700" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+            <li><a data-red="tiktok" href="#" aria-label="TikTok de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.600 2h-3.300v13.200a2.800 2.800 0 1 1-2.800-2.800c.3 0 .6 0 .8.100V9.100A6.100 6.100 0 1 0 16.600 15V8.600a7.500 7.500 0 0 0 4.200 1.300V6.600A4.300 4.300 0 0 1 16.600 2z"/></svg></a></li>
+          </ul>
+        </div>
+
+        <!-- Este formulario no guarda nada en un servidor: arma el mensaje y abre WhatsApp -->
+        <form class="formulario" id="form-asesoria">
+          <h3>O déjenos sus datos</h3>
+          <label>Nombre
+            <input type="text" name="nombre" required autocomplete="name">
+          </label>
+          <label>Empresa
+            <input type="text" name="empresa" autocomplete="organization">
+          </label>
+          <label>¿Qué servicio le interesa?
+            <select name="servicio">
+              <option>Revisoría fiscal</option>
+              <option>Auditoría externa</option>
+              <option>Auditoría financiera</option>
+              <option>Manual de control de calidad (contadores)</option>
+              <option>Aún no lo sé, necesito orientación</option>
+            </select>
+          </label>
+          <label>Comentario (opcional)
+            <textarea name="mensaje" rows="3"></textarea>
+          </label>
+          <button class="btn btn-dorado" type="submit">Agende su asesoría por WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== PIE DE PÁGINA ============================== -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p class="pie-logo"><span class="logo-jlb">JLB</span> Auditoría y Revisoría Fiscal</p>
+      <p class="pie-lema">Auditoría basada en riesgos · Independencia · Ética · Confianza</p>
+
+      <!-- Redes sociales (pie de página). Mismos enlaces que en Contacto: se editan en js/config.js -->
+      <ul class="redes redes-pie" aria-label="Redes sociales">
+        <li><a data-red="facebook" href="#" aria-label="Facebook de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8V6.500c0-.7.200-1.100 1.200-1.100H17V2.200C16.600 2.100 15.600 2 14.500 2 12 2 10.300 3.500 10.300 6.200V8H7.500v3.500h2.800V22H14V11.500h2.700L17.200 8H14z"/></svg></a></li>
+        <li><a data-red="instagram" href="#" aria-label="Instagram de JLB"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.200"/><circle cx="17.300" cy="6.700" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+        <li><a data-red="tiktok" href="#" aria-label="TikTok de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.600 2h-3.300v13.200a2.800 2.800 0 1 1-2.800-2.800c.3 0 .6 0 .8.100V9.100A6.100 6.100 0 1 0 16.600 15V8.600a7.500 7.500 0 0 0 4.200 1.300V6.600A4.300 4.300 0 0 1 16.600 2z"/></svg></a></li>
+      </ul>
+      <p class="pie-legal">© <span data-anio></span> JLB Auditoría y Consultoría. Los contenidos de esta página son informativos y no reemplazan una asesoría profesional personalizada. Las fechas deben confirmarse en el calendario oficial de la DIAN.</p>
+      <!-- TODO: agregar enlaces a Política de tratamiento de datos (Ley 1581 de 2012) cuando exista -->
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (siempre visible en celular) -->
+  <a class="wa-flotante" data-wa href="#contacto" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 27l1.8-6.2A11 11 0 1 1 11.400 25.300L5 27z"/><path d="M12 11c0 5 4 9 9 9l1.500-2.200-3-1.500-1.200 1.100c-1.300-.5-2.500-1.700-3-3l1.100-1.200-1.500-3L12 11z" fill="currentColor" stroke="none"/></svg>
+  </a>
+
+  <script src="js/config.js"></script>
+  <script src="js/fechas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
