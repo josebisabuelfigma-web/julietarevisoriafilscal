@@ -15,8 +15,8 @@ window.SITIO = {
   mensajeWhatsapp:
     "Hola Julieta, vi su página web y quiero solicitar una asesoría.",
 
-  /* Correo que se muestra en la página (tomado de sus piezas gráficas) */
-  email: "revisorafiscaljlb@gmail.com",
+  /* Correo que se muestra en la página (corregido por Julieta: es revisoriafiscaljlb, con "i") */
+  email: "revisoriafiscaljlb@gmail.com",
 
   /* Texto de ubicación que se muestra en contacto.
      TODO: poner la ciudad si ella lo desea (ej. "Bogotá, Colombia"). */

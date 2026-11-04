@@ -39,7 +39,7 @@ Falta, en `index.html` (depende de confirmar la ciudad):
 - [ ] Nota: la etiqueta `meta keywords` **no sirve** (Google la ignora); las palabras clave van en título, encabezados y texto
 
 ## 4. Google (cuentas y pasos)
-**Cuenta recomendada:** una cuenta de Google **de Julieta** (idealmente `revisorafiscaljlb@gmail.com`, el correo que muestra la página). El negocio y su reputación deben quedar a su nombre; el desarrollador entra como usuario delegado, no como dueño. Así no se pierde el acceso si cambia el colaborador.
+**Cuenta recomendada:** una cuenta de Google **de Julieta** (idealmente `revisoriafiscaljlb@gmail.com`, el correo que muestra la página). El negocio y su reputación deben quedar a su nombre; el desarrollador entra como usuario delegado, no como dueño. Así no se pierde el acceso si cambia el colaborador.
 
 - [ ] **Google Search Console** (search.google.com/search-console): agregar el dominio como «Propiedad de dominio» → verificar con registro DNS (TXT) en el registrador, o con la etiqueta `google-site-verification` en el `<head>` → enviar `https://DOMINIO/sitemap.xml` → «Inspección de URL» → «Solicitar indexación». Después, en Configuración → Usuarios y permisos, agregar al desarrollador como «Completo».
 - [ ] **Google Business Profile** (business.google.com): ficha gratuita; es lo que más pesa en búsquedas con ciudad («en Bogotá»). Si no atiende público en un local, crearla como negocio con **área de servicio** y ocultar la dirección. Requiere verificación (llamada, video o correo postal). Debe tener exactamente el mismo nombre, ciudad, teléfono y sitio web que la página y las redes. Agregar al desarrollador como «Administrador».
