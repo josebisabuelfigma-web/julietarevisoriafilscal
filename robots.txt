@@ -1,6 +1,10 @@
 # Permite que Google y otros buscadores lean todo el sitio.
-# TODO: cambiar el dominio de ejemplo por el real.
+# Dominio: revisoriafiscaljulietalozano.com
 User-agent: *
 Allow: /
 
-Sitemap: https://www.jlbauditoria.com/sitemap.xml
+Sitemap: https://revisoriafiscaljulietalozano.com/sitemap.xml
+
+# Documentos internos del proyecto: que Google no los indexe
+Disallow: /docs/
+Disallow: /LEEME.md

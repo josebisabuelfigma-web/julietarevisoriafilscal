@@ -28,6 +28,11 @@
     el.textContent = S.email;
     el.setAttribute("href", "mailto:" + S.email);
   });
+  /* Teléfono/WhatsApp visible: texto de config.js y enlace para llamar desde el celular */
+  document.querySelectorAll("[data-telefono]").forEach(function (el) {
+    el.textContent = S.telefonoMostrar || S.whatsapp;
+    el.setAttribute("href", "tel:+" + S.whatsapp);
+  });
   document.querySelectorAll("[data-ubicacion]").forEach(function (el) {
     el.textContent = S.ubicacion;
   });
@@ -77,7 +82,7 @@
       e.preventDefault();
       var d = new FormData(form);
       var lineas = [
-        "Hola Julieta, quiero agendar una asesoría.",
+        "Hola Julieta, quiero solicitar una asesoría.",
         "Nombre: " + (d.get("nombre") || ""),
         "Empresa: " + (d.get("empresa") || ""),
         "Servicio de interés: " + (d.get("servicio") || ""),

@@ -5,13 +5,15 @@
 window.SITIO = {
 
   /* WhatsApp de Julieta, con indicativo de país y SIN "+" ni espacios.
-     Colombia = 57. Ejemplo: 573001234567
-     TODO: reemplazar este número de EJEMPLO por el real. */
-  whatsapp: "573001234567",
+     Colombia = 57. Es el mismo número que se muestra en Contacto y en los datos para Google. */
+  whatsapp: "573107030220",
 
-  /* Texto con el que se abre el chat cuando alguien pulsa "Agende su asesoría" */
+  /* Cómo se escribe el número a la vista en la página (solo texto) */
+  telefonoMostrar: "+57 310 703 0220",
+
+  /* Texto con el que se abre el chat cuando alguien pulsa un botón de WhatsApp */
   mensajeWhatsapp:
-    "Hola Julieta, vi su página web y quiero agendar una asesoría para mi empresa.",
+    "Hola Julieta, vi su página web y quiero solicitar una asesoría.",
 
   /* Correo que se muestra en la página (tomado de sus piezas gráficas) */
   email: "revisorafiscaljlb@gmail.com",
@@ -20,16 +22,15 @@ window.SITIO = {
      TODO: poner la ciudad si ella lo desea (ej. "Bogotá, Colombia"). */
   ubicacion: "Colombia",
 
-  /* Texto del botón principal (aparece en varias partes de la página) */
-  textoBoton: "Agende su asesoría",
+  /* Texto de los botones marcados con data-boton (encabezado y sección Contacto).
+     Los demás botones llevan su texto escrito directamente en index.html. */
+  textoBoton: "Contactarme",
 
-  /* Redes sociales: pegue el enlace COMPLETO del perfil de Julieta.
-     Los de abajo son de EJEMPLO (llevan a la portada de cada red).
-     Si deja una en blanco ("") su icono se oculta solo en toda la página.
-     TODO: reemplazar por los perfiles reales. */
+  /* Redes sociales: enlace COMPLETO del perfil de Julieta.
+     Si deja una en blanco ("") su icono se oculta solo en toda la página. */
   redes: {
-    facebook:  "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    tiktok:    "https://www.tiktok.com/"
+    facebook:  "https://www.facebook.com/share/1E1A89rHXB/",
+    instagram: "https://www.instagram.com/revi_soriafiscaljlb",   // se quitó el código de seguimiento "?srtk=..." del enlace compartido
+    tiktok:    "https://www.tiktok.com/@revisoriafiscal21"
   }
 };

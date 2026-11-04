@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mapa del sitio para Google. TODO: cambiar el dominio de ejemplo por el real
-     y actualizar <lastmod> cuando se haga un cambio importante. -->
+<!-- Mapa del sitio para Google. Dominio real: revisoriafiscaljulietalozano.com.
+     Actualizar <lastmod> cuando se haga un cambio importante. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jlbauditoria.com/</loc>
+    <loc>https://revisoriafiscaljulietalozano.com/</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

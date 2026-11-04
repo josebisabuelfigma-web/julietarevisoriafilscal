@@ -31,7 +31,7 @@ window.FECHAS_AVISO =
   "vencimientos depende del último dígito del NIT (o de los dos últimos de la " +
   "cédula). El calendario 2027 de la DIAN aún no se ha publicado: los meses " +
   "marcados como «por confirmar» se actualizan cuando salga el decreto. " +
-  "Confirme siempre en dian.gov.co o agende su asesoría.";
+  "Confirme siempre en dian.gov.co o contácteme.";
 
 window.FECHAS = [
   /* ------------------------------- ENERO ------------------------------- */

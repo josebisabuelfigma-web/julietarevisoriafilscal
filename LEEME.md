@@ -20,8 +20,7 @@ Busque la palabra **TODO** en los archivos para ver lo que falta personalizar
 
 1. Entrar a netlify.com → "Add new site" → arrastrar la carpeta `Julietarevisoria`.
 2. Comprar el dominio `.com` (Namecheap, GoDaddy, etc.) y conectarlo en Netlify → *Domain management*.
-3. **Reemplazar el dominio de ejemplo** `https://www.jlbauditoria.com` por el real en:
-   `index.html` (canonical, og:url, og:image, JSON-LD), `sitemap.xml` y `robots.txt`.
+3. El dominio `https://revisoriafiscaljulietalozano.com` ya está puesto en `index.html`, `sitemap.xml` y `robots.txt`; si cambia, reemplácelo ahí.
 
 ## Para aparecer en Google
 

@@ -90,6 +90,12 @@ a { color: var(--vino); }
 .hero-botones { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
 .hero-foto { margin: 0; justify-self: center; width: min(360px, 86%); position: relative; }
 .hero-foto::before { content: ""; position: absolute; inset: 8% -6% 0 -6%; border-radius: 999px 999px 0 0; border: 2px solid var(--dorado); opacity: .6; }
+/* Sello "+15 años" sobre la foto: círculo dorado con borde marfil y texto vino (se distingue sobre el saco), abajo a la izquierda.
+   Es más pequeño en celular (96px) y crece en pantallas grandes (124px). */
+.sello { position: absolute; z-index: 2; left: -10px; bottom: 28px; width: 96px; height: 96px; border-radius: 50%; background: var(--dorado); border: 3px solid var(--marfil); color: var(--vino-oscuro); box-shadow: var(--sombra); display: grid; place-content: center; text-align: center; line-height: 1.1; }
+.sello strong { font-family: var(--fuente-titulos); font-size: 2rem; font-weight: 800; color: var(--vino-oscuro); }
+.sello span { font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; max-width: 70px; }
+@media (min-width: 960px) { .sello { width: 124px; height: 124px; left: -24px; bottom: 40px; } .sello strong { font-size: 2.6rem; } .sello span { font-size: .66rem; max-width: 88px; } }
 .hero-foto img { position: relative; border-radius: 999px 999px 0 0; box-shadow: var(--sombra); }
 
 .valores { list-style: none; padding: 1.1rem 0; margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 2rem; border-top: 1px solid var(--borde); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--vino); }
@@ -122,12 +128,16 @@ a { color: var(--vino); }
 .servicio.destacado { background: var(--dorado); border-color: var(--dorado); color: var(--vino-oscuro); }
 .servicio.destacado h3 { color: var(--vino-oscuro); }
 .servicio.destacado li::before { color: var(--vino); }
+/* La tarjeta del Sistema de Control de Calidad es más larga: ocupa todo el ancho
+   y su lista "Nuestro servicio incluye" se reparte en 2 columnas en pantallas grandes. */
+.servicio.destacado { grid-column: 1 / -1; }
+@media (min-width: 700px) { .servicio.destacado ul { columns: 2; column-gap: 2.4rem; } .servicio.destacado li { break-inside: avoid; } }
 .cinta { position: absolute; top: -12px; right: 16px; background: var(--vino); color: #fff; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; }
 .alerta { margin: 1rem 0 0; font-weight: 700; font-size: .95rem; }
 
 /* ---------- PROCESO ---------- */
 .pasos { list-style: none; counter-reset: paso; padding: 0; display: grid; gap: 1.2rem; }
-.pasos li { counter-increment: paso; background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.3rem 1.4rem 1.3rem 4.2rem; position: relative; display: grid; gap: .2rem; }
+.pasos li { align-content: start; counter-increment: paso; background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.3rem 1.4rem 1.3rem 4.2rem; position: relative; display: grid; gap: .2rem; }
 .pasos li::before { content: counter(paso); position: absolute; left: 1.1rem; top: 1.1rem; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--vino); color: var(--dorado-claro); font-family: var(--fuente-titulos); font-weight: 700; display: grid; place-content: center; }
 .pasos strong { color: var(--vino); }
 .pasos span { color: var(--texto-suave); font-size: .95rem; }
@@ -170,6 +180,13 @@ a { color: var(--vino); }
 /* ---------- SOBRE MÍ ---------- */
 .dos-col { display: grid; gap: 2.4rem; align-items: start; }
 .compromiso { font-family: var(--fuente-titulos); font-style: italic; font-size: 1.25rem; color: var(--vino); border-left: 3px solid var(--dorado); padding-left: 1rem; }
+/* Credenciales de Julieta: recuadros pequeños con borde dorado (2 por fila en celular, 3 en pantallas grandes) */
+.credenciales { list-style: none; padding: 0; margin: 1.4rem 0 1.6rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+.credenciales li { background: #fff; border: 1px solid var(--dorado); border-radius: 12px; padding: .8rem .9rem; font-size: .85rem; line-height: 1.35; color: var(--texto-suave); }
+/* Recuadro "+15 años": número grande en dorado */
+.credenciales .cred-numero { display: block; font-family: var(--fuente-titulos); font-weight: 800; font-size: 2rem; line-height: 1; color: var(--dorado); }
+.credenciales strong { display: block; color: var(--vino); font-size: .92rem; }
+@media (min-width: 960px) { .credenciales { grid-template-columns: repeat(3, 1fr); } }
 .atributos { padding-left: 1.1rem; }
 .atributos li { margin-bottom: .4rem; }
 .cita { background: var(--vino); color: var(--dorado-claro); border-radius: var(--radio); padding: 2.2rem 1.8rem; font-family: var(--fuente-titulos); font-style: italic; font-size: 1.5rem; text-align: center; border: 2px solid var(--dorado); }
@@ -219,6 +236,7 @@ details p { color: var(--texto-suave); }
    PANTALLAS MEDIANAS Y GRANDES
    ========================================================================== */
 @media (min-width: 700px) {
+  .tarjetas.dos { grid-template-columns: repeat(2, 1fr); }
   .tarjetas.cuatro { grid-template-columns: repeat(2, 1fr); }
   .tarjetas.servicios { grid-template-columns: repeat(2, 1fr); }
   .pasos { grid-template-columns: repeat(2, 1fr); }
@@ -238,7 +256,7 @@ details p { color: var(--texto-suave); }
   .hero { padding-top: 3.5rem; }
   .hero-grid { grid-template-columns: 1.15fr .85fr; }
   .tarjetas.cuatro { grid-template-columns: repeat(4, 1fr); }
-  .tarjetas.servicios { grid-template-columns: repeat(4, 1fr); }
+  .tarjetas.servicios { grid-template-columns: repeat(3, 1fr); } /* 3 tarjetas + la de Control de Calidad a todo el ancho */
   .pasos { grid-template-columns: repeat(4, 1fr); }
   .meses { grid-template-columns: repeat(3, 1fr); }
   .mensuales ul { grid-template-columns: repeat(4, 1fr); }
