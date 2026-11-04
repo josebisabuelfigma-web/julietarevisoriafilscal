@@ -269,3 +269,51 @@ details p { color: var(--texto-suave); }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+
+/* ==========================================================================
+   PÁGINAS POR SERVICIO  (revisoria-fiscal-bogota, auditoria-financiera,
+   revisora-fiscal-independiente). Estilos usados solo por esas páginas.
+   ========================================================================== */
+
+/* Encabezado de la página: ruta de navegación, H1 e introducción */
+.pagina-hero { background: linear-gradient(180deg, var(--marfil) 0%, var(--marfil-2) 100%); padding: 2.4rem 0 3rem; border-bottom: 1px solid var(--borde); }
+.pagina-hero h1 { font-size: clamp(1.9rem, 5.4vw, 3rem); }
+.pagina-intro { font-size: 1.1rem; color: var(--texto-suave); margin-bottom: 1.6rem; }
+.migas { font-size: .85rem; color: var(--texto-suave); margin-bottom: 1.2rem; }
+.migas a { color: var(--vino); }
+.migas span { margin: 0 .3rem; color: var(--dorado); }
+
+/* Texto corrido largo (párrafos con buen ancho de lectura) */
+.texto-largo p { color: var(--texto-suave); font-size: 1.05rem; }
+.texto-largo h2 { margin-bottom: .8rem; }
+
+/* Lista con marcas de verificación (sobre fondo oscuro por defecto; .lista-clara para fondo claro) */
+.lista-check { list-style: none; padding: 0; margin: 0; display: grid; gap: .9rem; }
+.lista-check li { position: relative; padding-left: 1.8rem; }
+.lista-check li::before { content: "✓"; position: absolute; left: 0; color: var(--dorado-claro); font-weight: 700; }
+.lista-check strong { color: var(--dorado-claro); }
+.lista-clara li::before { color: var(--dorado); }
+.lista-clara strong { color: var(--vino); }
+
+/* Banda de llamado a la acción (botón de WhatsApp) */
+.cta-banda { background: var(--vino-oscuro); color: #f3eadf; padding: 3.4rem 0; }
+.cta-banda h2 { color: #fff; }
+.cta-banda p { color: #e6d9c8; }
+.cta-datos { margin-top: 1.4rem; font-size: .95rem; }
+.cta-datos a { color: var(--dorado-claro); }
+
+/* Tarjetas que son enlaces (otros servicios) y enlace "Conocer más" */
+.enlace-tarjeta { text-decoration: none; color: inherit; display: block; transition: transform .15s, box-shadow .15s; }
+.enlace-tarjeta:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.enlace-tarjeta h3 { color: var(--vino); }
+.enlace-mas { color: var(--vino); font-weight: 600; text-decoration: none; display: inline-block; margin-top: .6rem; }
+.enlace-mas:hover { text-decoration: underline; }
+.servicio .enlace-mas { color: var(--dorado-claro); }
+.servicio.destacado .enlace-mas { color: var(--vino-oscuro); }
+.servicios-otros { display: grid; gap: 1.2rem; }
+@media (min-width: 700px) { .servicios-otros { grid-template-columns: repeat(2, 1fr); } }
+
+/* Enlaces del pie de página (servicios) */
+.pie-enlaces { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; font-size: .88rem; }
+.pie-enlaces a { color: var(--dorado-claro); }

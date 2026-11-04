@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  Página de servicio: Auditoría financiera independiente en Bogotá y en toda Colombia
+  Es una página independiente (rama "paginas-por-servicio"). Usa los mismos estilos y scripts del sitio principal
+  (../css/styles.css, ../js/*.js). Cada página tiene su propio título, descripción, H1 y texto, para que Google
+  pueda mostrarla por separado en las búsquedas de este servicio.
+-->
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO de esta página: título (50-65 caracteres) y descripción (150-160) con las búsquedas clave -->
+  <title>Auditoría Financiera en Bogotá y Colombia | Auditora independiente | JLB</title>
+  <meta name="description" content="Auditoría financiera independiente en Bogotá y toda Colombia, virtual y presencial: opinión sobre sus estados financieros, informe y recomendaciones. Solicite su asesoría.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#4a0e26">
+  <link rel="canonical" href="https://revisoriafiscaljulietalozano.com/auditoria-financiera/">
+
+  <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="JLB Auditoría y Consultoría">
+  <meta property="og:title" content="Auditoría Financiera en Bogotá y Colombia | Auditora independiente | JLB">
+  <meta property="og:description" content="Auditoría financiera independiente en Bogotá y toda Colombia, virtual y presencial: opinión sobre sus estados financieros, informe y recomendaciones. Solicite su asesoría.">
+  <meta property="og:url" content="https://revisoriafiscaljulietalozano.com/auditoria-financiera/">
+  <meta property="og:image" content="https://revisoriafiscaljulietalozano.com/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Datos estructurados: el servicio, la ruta de navegación y las preguntas frecuentes de esta página -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Auditoría financiera",
+    "description": "Auditoría financiera independiente en Bogotá y toda Colombia, virtual y presencial: opinión sobre sus estados financieros, informe y recomendaciones. Solicite su asesoría.",
+    "url": "https://revisoriafiscaljulietalozano.com/auditoria-financiera/",
+    "areaServed": [ { "@type": "City", "name": "Bogotá" }, { "@type": "Country", "name": "Colombia" } ],
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "JLB Auditoría y Consultoría",
+      "url": "https://revisoriafiscaljulietalozano.com/",
+      "telephone": "+573107030220",
+      "email": "revisoriafiscaljlb@gmail.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://revisoriafiscaljulietalozano.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Auditoría financiera", "item": "https://revisoriafiscaljulietalozano.com/auditoria-financiera/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿La auditoría financiera es obligatoria?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No siempre. La ley exige revisoría fiscal a ciertas empresas; la auditoría financiera suele contratarse de manera voluntaria o porque un banco, un socio o una entidad requiere información financiera con opinión independiente." } },
+      { "@type": "Question", "name": "¿Qué información necesito entregar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Principalmente la información contable y financiera de la empresa y sus soportes. En la asesoría inicial defino con usted el alcance y la lista de información que se requiere." } },
+      { "@type": "Question", "name": "¿Cuánto tiempo toma una auditoría?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Depende del tamaño de la empresa, la complejidad de sus operaciones y el alcance acordado. En la asesoría inicial establezco con usted el plan de trabajo y los tiempos." } },
+      { "@type": "Question", "name": "¿Puede realizarse de forma virtual?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. La mayor parte del trabajo puede desarrollarse de manera virtual en cualquier parte de Colombia, y se complementa con visitas presenciales coordinadas cuando el encargo lo requiere." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ENCABEZADO (igual al del sitio principal; los enlaces usan ../ para volver a la portada) -->
+  <header class="encabezado">
+    <div class="contenedor barra">
+      <a class="logo" href="../" aria-label="JLB Auditoría y Revisoría Fiscal - Inicio">
+        <span class="logo-jlb">JLB</span>
+        <span class="logo-sub">Auditoría y Revisoría Fiscal</span>
+      </a>
+      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="../">Inicio</a>
+        <a href="../#servicios">Servicios</a>
+        <a href="../#fechas">Fechas importantes</a>
+        <a href="../#nosotros">Sobre mí</a>
+        <a href="../#contacto">Contacto</a>
+        <a class="btn btn-dorado btn-menu-cta" data-wa data-boton href="#contacto">Contactarme</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ENCABEZADO DE LA PÁGINA: ruta de navegación, título principal (H1) y presentación -->
+    <section class="pagina-hero">
+      <div class="contenedor angosto">
+        <nav class="migas" aria-label="Ruta de navegación"><a href="../">Inicio</a> <span>›</span> Auditoría financiera</nav>
+        <p class="sobretitulo">Auditoría financiera · Bogotá y toda Colombia</p>
+        <h1>Auditoría financiera independiente en Bogotá y en toda Colombia</h1>
+        <p class="pagina-intro">Evalúo de manera objetiva e independiente la información financiera de su empresa para emitir una opinión confiable, identificar situaciones relevantes y fortalecer la toma de decisiones de la administración, los socios y los terceros que usan sus estados financieros.</p>
+        <p><a class="btn btn-vino" data-wa data-wa-msg="Hola Julieta, quiero solicitar una asesoría sobre auditoría financiera para mi empresa." href="#contacto">Solicitar asesoría</a></p>
+      </div>
+    </section>
+
+    <!-- Qué es -->
+    <section class="seccion">
+      <div class="contenedor angosto texto-largo">
+        <h2>¿Qué es una auditoría financiera?</h2>
+        <p>Es un examen independiente de los estados financieros de una empresa. Su resultado es una opinión profesional sobre si esa información presenta razonablemente la situación de la empresa, de acuerdo con el marco contable aplicable y con las normas de auditoría y aseguramiento vigentes en Colombia.</p>
+        <p>La auditoría basada en riesgos concentra el trabajo en lo que puede afectar de manera importante las cifras y los objetivos de la empresa, lo que hace el proceso más útil y más eficiente.</p>
+      </div>
+    </section>
+
+    <!-- Qué revisa -->
+    <section class="seccion seccion-oscura">
+      <div class="contenedor angosto">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Alcance</p>
+          <h2>Qué reviso en una auditoría financiera</h2>
+        </header>
+        <ul class="lista-check">
+          <li><strong>Cifras y soportes:</strong> verifico que los saldos y transacciones estén respaldados con evidencia suficiente y adecuada.</li>
+          <li><strong>Políticas contables:</strong> reviso que se apliquen de forma coherente y conforme al marco contable.</li>
+          <li><strong>Controles internos:</strong> evalúo si los controles relevantes están diseñados y funcionan adecuadamente.</li>
+          <li><strong>Riesgos relevantes:</strong> identifico y valoro los riesgos que pueden afectar la información financiera.</li>
+          <li><strong>Detección temprana de errores:</strong> señalo diferencias y situaciones que requieren atención antes de que se conviertan en problemas mayores.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Qué recibe el cliente -->
+    <section class="seccion">
+      <div class="contenedor angosto texto-largo">
+        <h2>Qué recibe al finalizar</h2>
+        <p>Usted recibe un informe claro con la opinión sobre sus estados financieros, los hallazgos identificados y recomendaciones concretas para que la administración pueda actuar oportunamente. Cuando aplica, realizo seguimiento a las acciones correctivas.</p>
+        <p>Una observación de auditoría no es una crítica personal: es una alerta profesional que busca proteger a la organización.</p>
+      </div>
+    </section>
+
+    <!-- Cuándo conviene -->
+    <section class="seccion seccion-marfil">
+      <div class="contenedor angosto">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Cuándo conviene</p>
+          <h2>¿Cuándo necesita su empresa una auditoría financiera?</h2>
+        </header>
+        <ul class="lista-check lista-clara">
+          <li>Cuando va a solicitar un crédito o a atraer inversionistas.</li>
+          <li>Cuando bancos, socios o entidades le exigen información financiera confiable.</li>
+          <li>Cuando se prepara para vender, comprar o fusionar una empresa.</li>
+          <li>Cuando hay cambios de administración o de socios.</li>
+          <li>Cuando implementa o revisa su información bajo NIIF.</li>
+          <li>Cuando sospecha errores o fraudes.</li>
+          <li>Cuando quiere decidir con cifras confiables, aunque la ley no lo exija.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Auditoría vs revisoría fiscal -->
+    <section class="seccion">
+      <div class="contenedor">
+        <header class="seccion-cab">
+          <p class="sobretitulo">No es lo mismo</p>
+          <h2>Auditoría financiera y revisoría fiscal</h2>
+        </header>
+        <div class="tarjetas dos">
+          <article class="tarjeta">
+            <h3>Auditoría financiera</h3>
+            <p>Encargo independiente, voluntario o requerido por terceros, que evalúa los estados financieros y emite una opinión. Suele realizarse de forma periódica o para un fin específico.</p>
+          </article>
+          <article class="tarjeta">
+            <h3>Revisoría fiscal</h3>
+            <p>Función permanente que la ley exige a ciertas empresas. Incluye control de legalidad, evaluación del control interno y fe pública sobre la información financiera.</p>
+          </article>
+        </div>
+        <p class="centro"><a class="enlace-mas" href="../revisoria-fiscal-bogota/">Conocer el servicio de revisoría fiscal →</a></p>
+      </div>
+    </section>
+
+    <!-- Dónde atiendo -->
+    <section class="seccion seccion-marfil">
+      <div class="contenedor angosto texto-largo">
+        <h2>Auditoría financiera en Bogotá y en toda Colombia</h2>
+        <p>Atiendo de forma virtual empresas de cualquier ciudad del país y realizo visitas presenciales coordinadas con usted, con preferencia en Bogotá. Las fechas y el alcance de cada encargo se definen de acuerdo con las necesidades de su empresa.</p>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES de este servicio (deben coincidir con el JSON-LD FAQPage del encabezado) -->
+    <section class="seccion seccion-marfil">
+      <div class="contenedor angosto">
+        <header class="seccion-cab">
+          <p class="sobretitulo">Preguntas frecuentes</p>
+          <h2>Preguntas sobre la auditoría financiera</h2>
+        </header>
+        <details>
+          <summary>¿La auditoría financiera es obligatoria?</summary>
+          <p>No siempre. La ley exige revisoría fiscal a ciertas empresas; la auditoría financiera suele contratarse de manera voluntaria o porque un banco, un socio o una entidad requiere información financiera con opinión independiente.</p>
+        </details>
+        <details>
+          <summary>¿Qué información necesito entregar?</summary>
+          <p>Principalmente la información contable y financiera de la empresa y sus soportes. En la asesoría inicial defino con usted el alcance y la lista de información que se requiere.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tiempo toma una auditoría?</summary>
+          <p>Depende del tamaño de la empresa, la complejidad de sus operaciones y el alcance acordado. En la asesoría inicial establezco con usted el plan de trabajo y los tiempos.</p>
+        </details>
+        <details>
+          <summary>¿Puede realizarse de forma virtual?</summary>
+          <p>Sí. La mayor parte del trabajo puede desarrollarse de manera virtual en cualquier parte de Colombia, y se complementa con visitas presenciales coordinadas cuando el encargo lo requiere.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN: botón de WhatsApp (el número se cambia en ../js/config.js) -->
+    <section class="cta-banda">
+      <div class="contenedor angosto centro">
+        <h2>Hablemos de las necesidades de su empresa</h2>
+        <p>Cuénteme qué servicio profesional necesita. Revisaré su solicitud y me pondré en contacto para definir el alcance del servicio.</p>
+        <a class="btn btn-dorado btn-grande" data-wa data-wa-msg="Hola Julieta, quiero solicitar una asesoría sobre auditoría financiera para mi empresa." href="#contacto">Solicitar asesoría</a>
+        <p class="cta-datos">WhatsApp: <a data-telefono href="#"></a> · <a data-email href="#"></a></p>
+      </div>
+    </section>
+
+    <!-- OTROS SERVICIOS: enlaces entre páginas (ayudan a Google y a quien navega) -->
+    <section class="seccion">
+      <div class="contenedor">
+        <header class="seccion-cab"><h2>Otros servicios</h2></header>
+        <div class="tarjetas servicios-otros">
+          <a class="tarjeta enlace-tarjeta" href="../revisoria-fiscal-bogota/">
+            <h3>Revisoría fiscal en Bogotá y Colombia</h3>
+            <p>Control de legalidad, control interno y dictamen de estados financieros.</p>
+            <span class="enlace-mas">Conocer más →</span>
+          </a>
+          <a class="tarjeta enlace-tarjeta" href="../revisora-fiscal-independiente/">
+            <h3>Revisora fiscal independiente</h3>
+            <p>Criterio profesional sin conflictos de interés y atención directa.</p>
+            <span class="enlace-mas">Conocer más →</span>
+          </a>
+        </div>
+        <p class="centro"><a class="btn btn-borde" href="../">Volver a la página principal</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="contenedor">
+      <p class="pie-logo"><span class="logo-jlb">JLB</span> Auditoría y Revisoría Fiscal</p>
+      <p class="pie-lema">Auditoría basada en riesgos · Independencia · Ética · Confianza</p>
+      <!-- Redes: los enlaces se editan en ../js/config.js -->
+      <ul class="redes redes-pie" aria-label="Redes sociales">
+        <li><a data-red="facebook" href="#" aria-label="Facebook de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8V6.500c0-.7.200-1.100 1.200-1.100H17V2.200C16.600 2.100 15.600 2 14.500 2 12 2 10.300 3.500 10.300 6.200V8H7.500v3.500h2.800V22H14V11.500h2.700L17.200 8H14z"/></svg></a></li>
+        <li><a data-red="instagram" href="#" aria-label="Instagram de JLB"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.200"/><circle cx="17.300" cy="6.700" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+        <li><a data-red="tiktok" href="#" aria-label="TikTok de JLB"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.600 2h-3.300v13.200a2.800 2.800 0 1 1-2.800-2.800c.3 0 .6 0 .8.100V9.100A6.100 6.100 0 1 0 16.600 15V8.600a7.500 7.500 0 0 0 4.200 1.300V6.600A4.300 4.300 0 0 1 16.600 2z"/></svg></a></li>
+      </ul>
+      <p class="pie-legal">© 2011 JLB Auditoría y Consultoría. Los contenidos de esta página son informativos y no reemplazan una asesoría profesional personalizada.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-flotante" data-wa href="#contacto" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 27l1.8-6.2A11 11 0 1 1 11.400 25.300L5 27z"/><path d="M12 11c0 5 4 9 9 9l1.500-2.200-3-1.500-1.200 1.100c-1.300-.5-2.500-1.700-3-3l1.100-1.200-1.500-3L12 11z" fill="currentColor" stroke="none"/></svg>
+  </a>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

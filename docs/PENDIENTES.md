@@ -34,7 +34,7 @@ Falta, en `index.html` (depende de confirmar la ciudad):
 - [x] (Hecho) **Sección «Dónde atiendo»**: ciudad, modalidad (presencial/virtual) y cobertura en Colombia
 - [x] (Hecho) Datos estructurados con `areaServed` (Bogotá y Colombia) y `sameAs` (3 redes). **Falta** `telephone` (si lo publica) y, si algún día tiene dirección o local, `address`
 - [x] (Hecho) `og:title`, `og:description` y texto alternativo de la foto
-- [ ] **Páginas separadas por servicio** (ej. `/revisoria-fiscal-bogota/`, `/auditoria-financiera/`, `/revisora-fiscal-independiente/`): una sola página compite poco por varias búsquedas. Cada una con su título, H1, texto propio, preguntas y enlace al formulario; agregarlas a `sitemap.xml`
+- [x] Páginas separadas por servicio (`/revisoria-fiscal-bogota/`, `/auditoria-financiera/`, `/revisora-fiscal-independiente/`): hechas en la rama `paginas-por-servicio` (pendiente de que Julieta las apruebe y se unan a `main`). Si no se aprueban, se descarta la rama y el resto del sitio no cambia.
 - [ ] Opcional: artículos útiles (ej. «¿Quién está obligado a tener revisor fiscal?», «Calendario tributario»), que atraen búsquedas y enlaces
 - [ ] Nota: la etiqueta `meta keywords` **no sirve** (Google la ignora); las palabras clave van en título, encabezados y texto
 
