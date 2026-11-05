@@ -66,13 +66,18 @@ a { color: var(--vino); }
 .btn-grande { font-size: 1.1rem; padding: 1rem 2rem; }
 
 /* ---------- ENCABEZADO ---------- */
-.encabezado { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, .96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--borde); }
+.encabezado { position: sticky; top: 0; z-index: 50; background: rgba(250, 246, 239, .96); backdrop-filter: blur(6px); border-bottom: 2px solid var(--dorado-claro); }
 .barra { display: flex; align-items: center; justify-content: space-between; min-height: 68px; }
 
-/* Logo hecho con texto */
-.logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-.logo-jlb { font-family: var(--fuente-titulos); font-weight: 800; font-size: 2rem; letter-spacing: .02em; color: var(--vino); }
-.logo-sub { font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: var(--dorado); font-weight: 600; margin-top: 2px; border-top: 1px solid var(--dorado); padding-top: 3px; }
+/* Logo hecho con texto: JLB con trazo dorado debajo | línea | Auditoría y Revisoría Fiscal */
+.logo { text-decoration: none; display: flex; align-items: center; gap: .75rem; line-height: 1; }
+.logo-jlb { position: relative; font-family: var(--fuente-titulos); font-weight: 700; font-size: 2.3rem; letter-spacing: .01em; color: var(--vino); padding-bottom: .12em; }
+.logo .logo-jlb::after { content: ""; position: absolute; left: -2%; right: -4%; bottom: -.08em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath fill='%23c99f55' d='M0 3C25 15 70 12 100 0C72 8 28 9 0 3Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+.logo-sub { max-width: 12.5em; border-left: 1px solid var(--dorado); padding: .15rem 0 .15rem .75rem; color: var(--texto-suave); font-size: .68rem; font-weight: 500; letter-spacing: .13em; line-height: 1.35; text-transform: uppercase; }
+.logo-sub { flex-shrink: 0; }   /* el encabezado se compacta entre 960 y 1040 px para que el menú quede en una línea */
+@media (min-width: 960px) and (max-width: 1040px) { .encabezado .contenedor { width: 94%; } .logo-jlb { font-size: 2.4rem !important; } .logo-sub { font-size: .7rem !important; } .menu { gap: .9rem !important; } .menu a { font-size: .82rem !important; white-space: nowrap; } .menu .btn-menu-cta { padding: .55rem 1rem !important; } }
+.encabezado .btn-dorado { background: linear-gradient(180deg, #d4ad63, #b88a3e); color: var(--vino); font-weight: 700; }
+@media (min-width: 960px) { .logo-jlb { font-size: 2.8rem; } .logo-sub { font-size: .85rem; } .encabezado .contenedor { width: min(1500px, 90%); } }
 
 .btn-menu { background: none; border: 0; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; cursor: pointer; }
 .btn-menu span { display: block; width: 24px; height: 2px; background: var(--vino); }
@@ -81,25 +86,84 @@ a { color: var(--vino); }
 .menu a { text-decoration: none; color: var(--texto); font-weight: 500; padding: .7rem .2rem; }
 .menu .btn-menu-cta { margin-top: .6rem; color: var(--vino-oscuro); }
 
-/* ---------- HERO ---------- */
-.hero { background: linear-gradient(180deg, var(--marfil) 0%, var(--marfil-2) 100%); padding: 2.2rem 0 0; overflow: hidden; }
-.hero-grid { display: grid; gap: 2rem; align-items: end; }
-.sobretitulo { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 700; color: var(--dorado); margin-bottom: .8rem; }
-.hero h1 span { color: var(--dorado); display: block; }
-.hero-sub { font-size: 1.1rem; color: var(--texto-suave); max-width: 560px; }
-.hero-botones { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
-.hero-foto { margin: 0; justify-self: center; width: min(360px, 86%); position: relative; }
-.hero-foto::before { content: ""; position: absolute; inset: 8% -6% 0 -6%; border-radius: 999px 999px 0 0; border: 2px solid var(--dorado); opacity: .6; }
-/* Sello "+15 años" sobre la foto: círculo dorado con borde marfil y texto vino (se distingue sobre el saco), abajo a la izquierda.
-   Es más pequeño en celular (96px) y crece en pantallas grandes (124px). */
-.sello { position: absolute; z-index: 2; left: -10px; bottom: 28px; width: 96px; height: 96px; border-radius: 50%; background: var(--dorado); border: 3px solid var(--marfil); color: var(--vino-oscuro); box-shadow: var(--sombra); display: grid; place-content: center; text-align: center; line-height: 1.1; }
-.sello strong { font-family: var(--fuente-titulos); font-size: 2rem; font-weight: 800; color: var(--vino-oscuro); }
-.sello span { font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; max-width: 70px; }
-@media (min-width: 960px) { .sello { width: 124px; height: 124px; left: -24px; bottom: 40px; } .sello strong { font-size: 2.6rem; } .sello span { font-size: .66rem; max-width: 88px; } }
-.hero-foto img { position: relative; border-radius: 999px 999px 0 0; box-shadow: var(--sombra); }
+/* ---------- PORTADA (HERO) ----------
+   Todas las medidas de la foto, el aro y el sello salen de --foto-h (alto de la foto),
+   así la portada conserva sus proporciones en cualquier pantalla.
+   La foto no se recorta de lado: el arco es un círculo grande con centro por debajo de la mitad. */
+html, body { overflow-x: clip; }                    /* evita el scroll lateral en celular */
 
-.valores { list-style: none; padding: 1.1rem 0; margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 2rem; border-top: 1px solid var(--borde); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--vino); }
-.valores li::before { content: "◆"; color: var(--dorado); margin-right: .6rem; font-size: .6rem; }
+.hero {
+  --foto-h: min(108vw, 560px);                      /* celular: alto de la foto */
+  --foto-w: calc(var(--foto-h) * .85);              /* ancho de la foto */
+  --arco-r: calc(var(--foto-h) * .68);              /* radio del arco de la foto */
+  position: relative; overflow: hidden; background: var(--marfil);
+}
+.hero-grid { width: 100%; display: grid; }
+.hero-texto { padding: 2rem 1.2rem 1.8rem; }
+
+.sobretitulo { text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 700; color: var(--dorado); margin-bottom: .8rem; }
+.hero .sobretitulo { display: flex; align-items: center; gap: .9rem; color: var(--vino); font-size: clamp(.72rem, 1.2vw, .95rem); font-weight: 600; letter-spacing: .2em; margin-bottom: 1.3em; }
+.hero .sobretitulo::after { content: ""; flex: 0 1 72px; height: 2px; background: var(--dorado); }   /* línea dorada */
+
+.hero h1 { font-size: clamp(1.9rem, 3.6vw, 4rem); font-weight: 600; line-height: 1.2; letter-spacing: -.015em; color: var(--vino); margin-bottom: .7em; font-variant-numeric: lining-nums; font-feature-settings: "lnum"; }
+.hero h1 span { color: var(--dorado); }             /* "Más de 15 años" en dorado */
+.hero-sub { font-size: clamp(1.05rem, 1.85vw, 1.55rem); font-style: italic; line-height: 1.4; color: var(--texto); border-left: 3px solid var(--dorado); padding-left: .9rem; max-width: 23.6em; margin-bottom: 0; }
+
+.hero-botones { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.hero-botones .btn { display: inline-flex; align-items: center; gap: .6rem; font-size: clamp(.92rem, 1.45vw, 1.15rem); padding: .68em 1.5em; }
+.hero-botones .btn-borde { background: rgba(255, 255, 255, .55); border-width: 1px; }
+.ico-btn { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Foto: pegada a la derecha y recortada solo por el arco */
+.hero-foto { position: relative; margin: 0 0 0 auto; width: var(--foto-w); height: var(--foto-h); clip-path: inset(0 -100vw); }
+.hero-foto picture { display: block; height: 100%; }
+.hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; clip-path: circle(var(--arco-r) at var(--arco-r) 60%); }
+
+/* Aro dorado: círculo con el mismo centro del arco, separado de la foto por una franja clara */
+.hero-foto::before {
+  --aro: calc(var(--foto-h) * .027);
+  --lado: calc((var(--arco-r) + var(--foto-h) * .048) * 2);
+  content: ""; position: absolute; width: var(--lado); height: var(--lado); border-radius: 50%;
+  left: calc(var(--foto-h) * -.048); top: calc(60% - var(--lado) / 2);
+  background: linear-gradient(200deg, #eed9a8, #c99f55 45%, #e8cf98);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - var(--aro)), #000 calc(100% - var(--aro) + .5px));
+          mask: radial-gradient(closest-side, transparent calc(100% - var(--aro)), #000 calc(100% - var(--aro) + .5px));
+}
+
+/* Sello "+15": su tamaño de letra depende del diámetro, por eso todo va en em */
+.sello {
+  --d: calc(var(--foto-h) * .346);
+  position: absolute; z-index: 2; left: calc(var(--foto-h) * -.03); top: 50.5%; width: var(--d); height: var(--d);
+  font-size: calc(var(--d) / 100); border-radius: 50%; border: 3em solid transparent; color: #fff;
+  background: linear-gradient(var(--vino), var(--vino)) padding-box, linear-gradient(140deg, #f3e0ad, #b88a3e 50%, #f3e0ad) border-box;
+  box-shadow: 0 6px 18px rgba(61, 11, 32, .28);
+  display: grid; place-content: center; text-align: center;
+}
+.sello strong { font-family: var(--fuente-titulos); font-size: 27em; font-weight: 600; line-height: 1; font-variant-numeric: lining-nums; font-feature-settings: "lnum"; color: #fff; }
+.sello span { font-family: var(--fuente-titulos); font-size: 9em; font-weight: 600; line-height: 1.2; letter-spacing: 0; color: #f6ecdd; margin-top: .25em; }
+.laurel { position: absolute; left: 2em; top: 22em; width: 21em; height: 50em; fill: #d9b05f; stroke: #d9b05f; }
+.laurel-der { left: auto; right: 2em; transform: scaleX(-1); }
+
+/* Franja vino inferior, con líneas doradas a los lados */
+.valores { list-style: none; margin: 0; width: 100%; padding: .9rem 1rem; background: var(--vino); border-top: 1px solid rgba(255, 255, 255, .35); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; color: #fff; font-size: .7rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.valores li:first-child { flex: 0 0 100%; text-align: center; margin-bottom: .2rem; }    /* celular: primera frase sola en su línea */
+.valores li:nth-child(n+3)::before { content: "·"; margin: 0 .7em; }                     /* punto separador */
+
+@media (min-width: 960px) {
+  .hero { --foto-h: clamp(420px, min(44.8vw, 100svh - 126px), 720px); }   /* cabe en pantalla junto con el encabezado y la franja */
+  .hero-grid { width: min(1500px, 90%); height: var(--foto-h); align-items: center; }
+  .hero-texto { width: calc(95vw - var(--foto-w) - var(--foto-h) * .06); padding: 0; }
+  .hero-botones { max-width: calc(100% - var(--foto-h) * .11); }           /* no se montan sobre el sello */
+  .hero-foto { position: absolute; right: 0; top: 0; }
+  .sello { left: calc(var(--foto-h) * -.168); }
+  .valores { flex-wrap: nowrap; padding: .85rem 5vw; font-size: clamp(.72rem, 1.2vw, .95rem); }
+  .valores::before, .valores::after { content: ""; flex: 1; height: 2px; background: var(--dorado); }
+  .valores::before { margin-right: 2.4em; }
+  .valores::after { margin-left: 2.4em; }
+  .valores li { white-space: nowrap; }
+  .valores li:first-child { flex: none; margin: 0; }
+  .valores li:nth-child(n+2)::before { content: "·"; margin: 0 1.1em; }
+}
 
 /* ---------- SECCIONES ---------- */
 .seccion { padding: 4rem 0; }
@@ -252,10 +316,7 @@ details p { color: var(--texto-suave); }
   .menu { display: flex; position: static; flex-direction: row; align-items: center; gap: 1.4rem; background: none; border: 0; padding: 0; }
   .menu a { padding: .4rem 0; font-size: .92rem; }
   .menu .btn-menu-cta { margin: 0; padding: .65rem 1.3rem; }
-  .logo-jlb { font-size: 2.3rem; }
 
-  .hero { padding-top: 3.5rem; }
-  .hero-grid { grid-template-columns: 1.15fr .85fr; }
   .tarjetas.cuatro { grid-template-columns: repeat(4, 1fr); }
   .tarjetas.servicios { grid-template-columns: repeat(3, 1fr); } /* 3 tarjetas + la de Control de Calidad a todo el ancho */
   .pasos { grid-template-columns: repeat(4, 1fr); }
@@ -318,116 +379,3 @@ details p { color: var(--texto-suave); }
 /* Enlaces del pie de página (servicios) */
 .pie-enlaces { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; font-size: .88rem; }
 .pie-enlaces a { color: var(--dorado-claro); }
-
-/* ==========================================================================
-   PORTADA · diseño aprobado (sobrescribe los estilos anteriores del hero)
-   Texto a la izquierda, foto en arco a la derecha, sello "+15" y franja vino
-   con los valores en la parte inferior.
-   ========================================================================== */
-.hero { background: var(--marfil); padding: 0; position: relative; }
-.hero .sobretitulo { display: flex; align-items: center; gap: 1rem; color: var(--vino); letter-spacing: .22em; font-size: .8rem; }
-.hero .sobretitulo::after { content: ""; width: 72px; height: 2px; background: var(--dorado); }   /* línea dorada junto al sobretítulo */
-.hero h1 { color: var(--vino); font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 700; }
-.hero h1 span { display: inline; color: var(--dorado); }                                           /* "Más de 15 años" en dorado */
-.hero-sub { font-style: italic; color: var(--texto); font-size: 1.15rem; border-left: 4px solid var(--dorado); padding-left: 1rem; max-width: 520px; }
-.hero-botones .btn { display: inline-flex; align-items: center; gap: .6rem; }
-.ico-btn { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-/* Celular: foto abajo, con forma de arco */
-.hero-grid { padding-top: 2.2rem; align-items: stretch; }
-.hero-foto { width: min(380px, 86%); }
-.hero-foto img { border-radius: 999px 999px 0 0; box-shadow: none; }
-
-/* Franja vino inferior con los valores y líneas doradas a los lados */
-.valores { background: var(--vino); width: 100%; margin: 0; padding: 1.1rem 1.2rem; border-top: 0; color: #fff; gap: .4rem 1.4rem; }
-.valores li::before { content: "·"; color: #fff; font-size: 1.2rem; margin-right: 1.4rem; vertical-align: middle; }
-.valores li:first-child::before { content: none; }
-
-@media (min-width: 960px) {
-  .hero-grid { grid-template-columns: 1.1fr .9fr; min-height: 480px; padding-top: 0; gap: 0; align-items: center; }
-  .hero-texto { padding: 2rem 2rem 2rem 0; }
-  /* Foto que ocupa todo el alto, pegada a la derecha, con borde curvo a la izquierda y aro dorado */
-  .hero-foto { width: 100%; height: 100%; justify-self: stretch; margin-right: calc((100vw - min(1140px, 100vw - 2.4rem)) / -2); }
-  .hero-foto::before { inset: 0 0 0 -14px; border-radius: 60% 0 0 60% / 50% 0 0 50%; border: 3px solid var(--dorado-claro); opacity: 1; }
-  .hero-foto picture { display: block; height: 100%; }
-  .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; border-radius: 60% 0 0 60% / 50% 0 0 50%; }
-  .sello { left: -50px; bottom: 36px; width: 150px; height: 150px; background: var(--vino); border: 3px solid var(--dorado-claro); color: #fff; }
-  .sello strong { color: #fff; font-size: 2.6rem; }
-  .sello span { color: #fff; font-size: .72rem; max-width: 100px; text-transform: none; letter-spacing: 0; }
-}
-
-/* Ajustes finos de la portada */
-.hero-grid { grid-template-columns: minmax(0, 1fr); }                      /* evita que el texto desborde en celular */
-.hero-foto::before { display: none; }                                      /* el aro dorado solo se dibuja en pantallas grandes */
-.logo { flex-direction: row; align-items: center; gap: .8rem; }            /* logo: JLB | Auditoría y Revisoría Fiscal */
-.logo-jlb { font-size: 2.4rem; }
-.logo-sub { border-top: 0; border-left: 1px solid var(--dorado); padding: .2rem 0 .2rem .8rem; margin: 0; color: var(--texto-suave); font-size: .72rem; line-height: 1.35; }
-@media (min-width: 960px) {
-  .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
-  .hero-foto { width: auto; justify-self: stretch; }
-  .hero-foto::before { display: block; }
-  .logo-jlb { font-size: 3rem; }
-  .logo-sub { font-size: .85rem; }
-}
-@media (min-width: 960px) {
-  .hero-grid { height: 480px; }                                            /* altura fija como en el diseño: la foto no estira la portada */
-  .hero-foto picture { position: absolute; inset: 0; }
-  .hero-foto img { position: absolute; inset: 0; }
-}
-@media (min-width: 960px) {
-  /* Arco circular suave (radio 550px) como en el diseño; el aro dorado es un círculo del mismo centro */
-  .hero-foto { clip-path: inset(0 -100px 0 -100px); }                      /* recorta solo arriba/abajo; deja salir el sello a la izquierda */
-  .hero-foto img { border-radius: 0; clip-path: circle(550px at 100% 50%); object-position: 50% 8%; }
-  .hero-foto::before { inset: auto; width: 1100px; height: 1100px; top: 50%; right: -536px; margin-top: -550px; border-radius: 50%; border: 3px solid var(--dorado-claro); }
-}
-@media (min-width: 960px) { .sello { left: -6px; bottom: 30px; } .hero-foto img { object-position: 50% 0; } }
-
-/* ==========================================================================
-   PORTADA · foto completa (cabeza a cintura) y celular igual al diseño
-   La foto se muestra ENTERA (object-fit: contain) pegada a la derecha; el espacio
-   sobrante a la izquierda se rellena con la misma foto desenfocada, así no se corta.
-   ========================================================================== */
-html, body { overflow-x: clip; }                                   /* evita el scroll lateral en celular */
-
-.hero-foto::after {                                                /* relleno desenfocado detrás de la foto */
-  content: ""; position: absolute; inset: 0; z-index: 0;
-  background: url("../img/julieta.jpg") center 20% / cover; filter: blur(16px); transform: scale(1.15);
-}
-.hero-foto picture { position: absolute; inset: 0; z-index: 1; display: block; }
-.hero-foto img {
-  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
-  object-fit: contain; object-position: right bottom; border-radius: 0; box-shadow: none;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);   /* borde izquierdo suave sobre el relleno */
-          mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);
-}
-
-/* Celular: foto a todo el ancho, esquina superior izquierda curva y sello vino */
-@media (max-width: 959px) {
-  .hero-grid { gap: 1.6rem; }
-  .hero-foto { width: calc(100% + 2.4rem); margin-inline: -1.2rem; height: 430px; overflow: hidden; border-top-left-radius: 230px; justify-self: stretch; }
-  .hero-foto::after { filter: blur(16px); }
-  .sello { left: 14px; bottom: 22px; width: 104px; height: 104px; background: var(--vino); border: 3px solid var(--dorado-claro); color: #fff; z-index: 3; }
-  .sello strong { color: #fff; font-size: 1.9rem; }
-  .sello span { color: #fff; font-size: .6rem; max-width: 76px; text-transform: none; letter-spacing: 0; }
-}
-
-/* Pantallas grandes: la foto sigue el mismo arco circular; el relleno usa el mismo recorte */
-@media (min-width: 960px) {
-  .hero-grid { height: 520px; }
-  .hero-foto::after { clip-path: circle(550px at 100% 50%); }
-  .hero-foto img { clip-path: circle(550px at 100% 50%); }
-}
-
-/* Relleno: solo el fondo claro de la oficina (lado derecho de la foto, ampliado y desenfocado), sin el cabello oscuro */
-.hero-foto::after { background: url("../img/julieta.jpg") 100% 18% / 330% auto; filter: blur(10px); transform: scale(1.1); }
-.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 45%); mask-image: linear-gradient(to right, transparent 0, #000 45%); }
-/* La foto contenida ocupa solo ~65% derecho de la caja: el desvanecido se aplica sobre esa zona */
-.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 55%); mask-image: linear-gradient(to right, transparent 33%, #000 55%); }
-/* El desvanecido se aplica al contenedor <picture> (más fiable que sobre la imagen con recorte) */
-.hero-foto img { -webkit-mask-image: none; mask-image: none; }
-.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 58%); mask-image: linear-gradient(to right, transparent 33%, #000 58%); }
-/* La foto empieza al ~39% de la caja: el desvanecido debe comenzar justo ahí para que no se vea el borde */
-.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 39%, #000 66%); mask-image: linear-gradient(to right, transparent 39%, #000 66%); }
-@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: none; mask-image: none; } }
-.hero-foto::before { z-index: 2; pointer-events: none; }                 /* aro dorado por encima de la foto */
-@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 20%, #000 48%); mask-image: linear-gradient(to right, transparent 20%, #000 48%); } .hero .sobretitulo::after { width: 40px; } }
