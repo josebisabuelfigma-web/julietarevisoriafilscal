@@ -1,0 +1,155 @@
+/* ==========================================================================
+   PORTADA HERO REUTILIZABLE (extraída de JLB Auditoría)
+   Pegue este archivo DESPUÉS del CSS principal del proyecto.
+   Variables que debe tener en :root (cambie los colores por los del proyecto):
+     --vino --dorado --dorado-claro --marfil --texto --texto-suave
+     --fuente-titulos --sombra   y los botones .btn .btn-vino .btn-borde
+   La ruta de la foto del relleno (url("../img/julieta.jpg")) debe apuntar a la foto del proyecto.
+
+   HTML:
+   <section class="hero" id="inicio">
+     <div class="contenedor hero-grid">
+       <div class="hero-texto">
+         <p class="sobretitulo">Profesional independiente</p>
+         <h1><span>Más de 15 años</span> de experiencia en ...</h1>
+         <p class="hero-sub">Frase de apoyo en cursiva.</p>
+         <div class="hero-botones">
+           <a class="btn btn-vino" href="#a"><svg class="ico-btn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Botón 1</a>
+           <a class="btn btn-borde" href="#b"><svg class="ico-btn" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Botón 2</a>
+         </div>
+       </div>
+       <figure class="hero-foto">
+         <div class="sello"><strong>+15</strong><span>años de experiencia profesional</span></div>
+         <picture><img src="img/foto.jpg" width="720" height="1000" alt="Descripción"></picture>
+       </figure>
+     </div>
+     <ul class="contenedor valores"><li>Valor 1</li><li>Valor 2</li><li>Valor 3</li></ul>
+   </section>
+   ========================================================================== */
+
+/* Base mínima (viene del styles.css original) */
+.contenedor { width: min(1140px, 100% - 2.4rem); margin-inline: auto; }
+.hero-grid { display: grid; gap: 2rem; }
+.hero-foto { margin: 0; position: relative; }
+.hero-botones { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+.sobretitulo { text-transform: uppercase; font-weight: 700; margin-bottom: .8rem; }
+.sello { position: absolute; z-index: 2; border-radius: 50%; display: grid; place-content: center; text-align: center; line-height: 1.1; box-shadow: var(--sombra); }
+.sello strong { font-family: var(--fuente-titulos); font-weight: 800; }
+.sello span { font-weight: 600; }
+.valores { list-style: none; padding: 1.1rem 0; display: flex; flex-wrap: wrap; justify-content: center; text-transform: uppercase; font-weight: 600; font-size: .78rem; letter-spacing: .14em; }
+
+.pie-enlaces { list-style: none; padding: 0; margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.4rem; font-size: .88rem; }
+.pie-enlaces a { color: var(--dorado-claro); }
+
+/* ==========================================================================
+   PORTADA · diseño aprobado (sobrescribe los estilos anteriores del hero)
+   Texto a la izquierda, foto en arco a la derecha, sello "+15" y franja vino
+   con los valores en la parte inferior.
+   ========================================================================== */
+.hero { background: var(--marfil); padding: 0; position: relative; }
+.hero .sobretitulo { display: flex; align-items: center; gap: 1rem; color: var(--vino); letter-spacing: .22em; font-size: .8rem; }
+.hero .sobretitulo::after { content: ""; width: 72px; height: 2px; background: var(--dorado); }   /* línea dorada junto al sobretítulo */
+.hero h1 { color: var(--vino); font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 700; }
+.hero h1 span { display: inline; color: var(--dorado); }                                           /* "Más de 15 años" en dorado */
+.hero-sub { font-style: italic; color: var(--texto); font-size: 1.15rem; border-left: 4px solid var(--dorado); padding-left: 1rem; max-width: 520px; }
+.hero-botones .btn { display: inline-flex; align-items: center; gap: .6rem; }
+.ico-btn { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Celular: foto abajo, con forma de arco */
+.hero-grid { padding-top: 2.2rem; align-items: stretch; }
+.hero-foto { width: min(380px, 86%); }
+.hero-foto img { border-radius: 999px 999px 0 0; box-shadow: none; }
+
+/* Franja vino inferior con los valores y líneas doradas a los lados */
+.valores { background: var(--vino); width: 100%; margin: 0; padding: 1.1rem 1.2rem; border-top: 0; color: #fff; gap: .4rem 1.4rem; }
+.valores li::before { content: "·"; color: #fff; font-size: 1.2rem; margin-right: 1.4rem; vertical-align: middle; }
+.valores li:first-child::before { content: none; }
+
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1.1fr .9fr; min-height: 480px; padding-top: 0; gap: 0; align-items: center; }
+  .hero-texto { padding: 2rem 2rem 2rem 0; }
+  /* Foto que ocupa todo el alto, pegada a la derecha, con borde curvo a la izquierda y aro dorado */
+  .hero-foto { width: 100%; height: 100%; justify-self: stretch; margin-right: calc((100vw - min(1140px, 100vw - 2.4rem)) / -2); }
+  .hero-foto::before { inset: 0 0 0 -14px; border-radius: 60% 0 0 60% / 50% 0 0 50%; border: 3px solid var(--dorado-claro); opacity: 1; }
+  .hero-foto picture { display: block; height: 100%; }
+  .hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; border-radius: 60% 0 0 60% / 50% 0 0 50%; }
+  .sello { left: -50px; bottom: 36px; width: 150px; height: 150px; background: var(--vino); border: 3px solid var(--dorado-claro); color: #fff; }
+  .sello strong { color: #fff; font-size: 2.6rem; }
+  .sello span { color: #fff; font-size: .72rem; max-width: 100px; text-transform: none; letter-spacing: 0; }
+}
+
+/* Ajustes finos de la portada */
+.hero-grid { grid-template-columns: minmax(0, 1fr); }                      /* evita que el texto desborde en celular */
+.hero-foto::before { display: none; }                                      /* el aro dorado solo se dibuja en pantallas grandes */
+.logo { flex-direction: row; align-items: center; gap: .8rem; }            /* logo: JLB | Auditoría y Revisoría Fiscal */
+.logo-jlb { font-size: 2.4rem; }
+.logo-sub { border-top: 0; border-left: 1px solid var(--dorado); padding: .2rem 0 .2rem .8rem; margin: 0; color: var(--texto-suave); font-size: .72rem; line-height: 1.35; }
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+  .hero-foto { width: auto; justify-self: stretch; }
+  .hero-foto::before { display: block; }
+  .logo-jlb { font-size: 3rem; }
+  .logo-sub { font-size: .85rem; }
+}
+@media (min-width: 960px) {
+  .hero-grid { height: 480px; }                                            /* altura fija como en el diseño: la foto no estira la portada */
+  .hero-foto picture { position: absolute; inset: 0; }
+  .hero-foto img { position: absolute; inset: 0; }
+}
+@media (min-width: 960px) {
+  /* Arco circular suave (radio 550px) como en el diseño; el aro dorado es un círculo del mismo centro */
+  .hero-foto { clip-path: inset(0 -100px 0 -100px); }                      /* recorta solo arriba/abajo; deja salir el sello a la izquierda */
+  .hero-foto img { border-radius: 0; clip-path: circle(550px at 100% 50%); object-position: 50% 8%; }
+  .hero-foto::before { inset: auto; width: 1100px; height: 1100px; top: 50%; right: -536px; margin-top: -550px; border-radius: 50%; border: 3px solid var(--dorado-claro); }
+}
+@media (min-width: 960px) { .sello { left: -6px; bottom: 30px; } .hero-foto img { object-position: 50% 0; } }
+
+/* ==========================================================================
+   PORTADA · foto completa (cabeza a cintura) y celular igual al diseño
+   La foto se muestra ENTERA (object-fit: contain) pegada a la derecha; el espacio
+   sobrante a la izquierda se rellena con la misma foto desenfocada, así no se corta.
+   ========================================================================== */
+html, body { overflow-x: clip; }                                   /* evita el scroll lateral en celular */
+
+.hero-foto::after {                                                /* relleno desenfocado detrás de la foto */
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background: url("../img/julieta.jpg") center 20% / cover; filter: blur(16px); transform: scale(1.15);
+}
+.hero-foto picture { position: absolute; inset: 0; z-index: 1; display: block; }
+.hero-foto img {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+  object-fit: contain; object-position: right bottom; border-radius: 0; box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);   /* borde izquierdo suave sobre el relleno */
+          mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);
+}
+
+/* Celular: foto a todo el ancho, esquina superior izquierda curva y sello vino */
+@media (max-width: 959px) {
+  .hero-grid { gap: 1.6rem; }
+  .hero-foto { width: calc(100% + 2.4rem); margin-inline: -1.2rem; height: 430px; overflow: hidden; border-top-left-radius: 230px; justify-self: stretch; }
+  .hero-foto::after { filter: blur(16px); }
+  .sello { left: 14px; bottom: 22px; width: 104px; height: 104px; background: var(--vino); border: 3px solid var(--dorado-claro); color: #fff; z-index: 3; }
+  .sello strong { color: #fff; font-size: 1.9rem; }
+  .sello span { color: #fff; font-size: .6rem; max-width: 76px; text-transform: none; letter-spacing: 0; }
+}
+
+/* Pantallas grandes: la foto sigue el mismo arco circular; el relleno usa el mismo recorte */
+@media (min-width: 960px) {
+  .hero-grid { height: 520px; }
+  .hero-foto::after { clip-path: circle(550px at 100% 50%); }
+  .hero-foto img { clip-path: circle(550px at 100% 50%); }
+}
+
+/* Relleno: solo el fondo claro de la oficina (lado derecho de la foto, ampliado y desenfocado), sin el cabello oscuro */
+.hero-foto::after { background: url("../img/julieta.jpg") 100% 18% / 330% auto; filter: blur(10px); transform: scale(1.1); }
+.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 45%); mask-image: linear-gradient(to right, transparent 0, #000 45%); }
+/* La foto contenida ocupa solo ~65% derecho de la caja: el desvanecido se aplica sobre esa zona */
+.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 55%); mask-image: linear-gradient(to right, transparent 33%, #000 55%); }
+/* El desvanecido se aplica al contenedor <picture> (más fiable que sobre la imagen con recorte) */
+.hero-foto img { -webkit-mask-image: none; mask-image: none; }
+.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 58%); mask-image: linear-gradient(to right, transparent 33%, #000 58%); }
+/* La foto empieza al ~39% de la caja: el desvanecido debe comenzar justo ahí para que no se vea el borde */
+.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 39%, #000 66%); mask-image: linear-gradient(to right, transparent 39%, #000 66%); }
+@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: none; mask-image: none; } }
+.hero-foto::before { z-index: 2; pointer-events: none; }                 /* aro dorado por encima de la foto */
+@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 20%, #000 48%); mask-image: linear-gradient(to right, transparent 20%, #000 48%); } .hero .sobretitulo::after { width: 40px; } }

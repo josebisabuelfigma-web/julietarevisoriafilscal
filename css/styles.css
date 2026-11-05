@@ -381,3 +381,53 @@ details p { color: var(--texto-suave); }
   .hero-foto::before { inset: auto; width: 1100px; height: 1100px; top: 50%; right: -536px; margin-top: -550px; border-radius: 50%; border: 3px solid var(--dorado-claro); }
 }
 @media (min-width: 960px) { .sello { left: -6px; bottom: 30px; } .hero-foto img { object-position: 50% 0; } }
+
+/* ==========================================================================
+   PORTADA · foto completa (cabeza a cintura) y celular igual al diseño
+   La foto se muestra ENTERA (object-fit: contain) pegada a la derecha; el espacio
+   sobrante a la izquierda se rellena con la misma foto desenfocada, así no se corta.
+   ========================================================================== */
+html, body { overflow-x: clip; }                                   /* evita el scroll lateral en celular */
+
+.hero-foto::after {                                                /* relleno desenfocado detrás de la foto */
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background: url("../img/julieta.jpg") center 20% / cover; filter: blur(16px); transform: scale(1.15);
+}
+.hero-foto picture { position: absolute; inset: 0; z-index: 1; display: block; }
+.hero-foto img {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+  object-fit: contain; object-position: right bottom; border-radius: 0; box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);   /* borde izquierdo suave sobre el relleno */
+          mask-image: linear-gradient(to right, transparent 0, #000 30%, #000 100%);
+}
+
+/* Celular: foto a todo el ancho, esquina superior izquierda curva y sello vino */
+@media (max-width: 959px) {
+  .hero-grid { gap: 1.6rem; }
+  .hero-foto { width: calc(100% + 2.4rem); margin-inline: -1.2rem; height: 430px; overflow: hidden; border-top-left-radius: 230px; justify-self: stretch; }
+  .hero-foto::after { filter: blur(16px); }
+  .sello { left: 14px; bottom: 22px; width: 104px; height: 104px; background: var(--vino); border: 3px solid var(--dorado-claro); color: #fff; z-index: 3; }
+  .sello strong { color: #fff; font-size: 1.9rem; }
+  .sello span { color: #fff; font-size: .6rem; max-width: 76px; text-transform: none; letter-spacing: 0; }
+}
+
+/* Pantallas grandes: la foto sigue el mismo arco circular; el relleno usa el mismo recorte */
+@media (min-width: 960px) {
+  .hero-grid { height: 520px; }
+  .hero-foto::after { clip-path: circle(550px at 100% 50%); }
+  .hero-foto img { clip-path: circle(550px at 100% 50%); }
+}
+
+/* Relleno: solo el fondo claro de la oficina (lado derecho de la foto, ampliado y desenfocado), sin el cabello oscuro */
+.hero-foto::after { background: url("../img/julieta.jpg") 100% 18% / 330% auto; filter: blur(10px); transform: scale(1.1); }
+.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 0, #000 45%); mask-image: linear-gradient(to right, transparent 0, #000 45%); }
+/* La foto contenida ocupa solo ~65% derecho de la caja: el desvanecido se aplica sobre esa zona */
+.hero-foto img { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 55%); mask-image: linear-gradient(to right, transparent 33%, #000 55%); }
+/* El desvanecido se aplica al contenedor <picture> (más fiable que sobre la imagen con recorte) */
+.hero-foto img { -webkit-mask-image: none; mask-image: none; }
+.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 33%, #000 58%); mask-image: linear-gradient(to right, transparent 33%, #000 58%); }
+/* La foto empieza al ~39% de la caja: el desvanecido debe comenzar justo ahí para que no se vea el borde */
+.hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 39%, #000 66%); mask-image: linear-gradient(to right, transparent 39%, #000 66%); }
+@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: none; mask-image: none; } }
+.hero-foto::before { z-index: 2; pointer-events: none; }                 /* aro dorado por encima de la foto */
+@media (max-width: 959px) { .hero-foto picture { -webkit-mask-image: linear-gradient(to right, transparent 20%, #000 48%); mask-image: linear-gradient(to right, transparent 20%, #000 48%); } .hero .sobretitulo::after { width: 40px; } }
