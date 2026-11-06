@@ -11,9 +11,10 @@ window.SITIO = {
   /* Cómo se escribe el número a la vista en la página (solo texto) */
   telefonoMostrar: "+57 310 703 0220",
 
-  /* Texto con el que se abre el chat cuando alguien pulsa un botón de WhatsApp */
+  /* Texto con el que se abre el chat desde el botón flotante de WhatsApp.
+     El mensaje del formulario se arma aparte, en js/main.js. */
   mensajeWhatsapp:
-    "Hola Julieta, vi su página web y quiero solicitar una asesoría.",
+    "Hola Julieta, visité tu página web y estoy interesado(a) en conocer tus servicios profesionales. Quisiera recibir más información. ¡Muchas gracias!",
 
   /* Correo que se muestra en la página (corregido por Julieta: es revisoriafiscaljlb, con "i") */
   email: "revisoriafiscaljlb@gmail.com",
@@ -22,7 +23,7 @@ window.SITIO = {
      TODO: poner la ciudad si ella lo desea (ej. "Bogotá, Colombia"). */
   ubicacion: "Colombia",
 
-  /* Texto de los botones marcados con data-boton (encabezado y sección Contacto).
+  /* Texto de los botones marcados con data-boton (encabezado de todas las páginas).
      Los demás botones llevan su texto escrito directamente en index.html. */
   textoBoton: "Contactarme",
 

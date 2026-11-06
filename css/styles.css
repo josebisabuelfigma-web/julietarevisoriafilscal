@@ -358,7 +358,7 @@ details p { color: var(--texto-suave); }
 .lista-clara li::before { color: var(--dorado); }
 .lista-clara strong { color: var(--vino); }
 
-/* Banda de llamado a la acción (botón de WhatsApp) */
+/* Banda de llamado a la acción (botón que lleva al formulario) */
 .cta-banda { background: var(--vino-oscuro); color: #f3eadf; padding: 3.4rem 0; }
 .cta-banda h2 { color: #fff; }
 .cta-banda p { color: #e6d9c8; }
